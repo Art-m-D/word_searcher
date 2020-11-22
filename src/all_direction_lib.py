@@ -1,90 +1,66 @@
-def _check_word_right(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a][b + i]:
-                return False
-    except:
-        return False
-    return True
+def _get_word_right(letters_grid, h, w, height, width):
+    word = ''
+    for i in range(w, width):
+        word += letters_grid[h][i]
+    return word
 
 
-def _check_word_left(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a][b - i] or b - i < 0:
-                return False
-    except:
-        return False
-    return True
+def _get_word_left(letters_grid, h, w, height, width):
+    word = ''
+    for i in range(w, -1, -1):
+        word += letters_grid[h][i]
+    return word
 
 
-def _check_word_up(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a - i][b] or a - i < 0:
-                return False
-    except:
-        return False
-    return True
+def _get_word_up(letters_grid, h, w, height, width):
+    word = ''
+    for i in range(h, -1, -1):
+        word += letters_grid[i][w]
+    return word
 
 
-def _check_word_down(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a + i][b]:
-                return False
-    except:
-        return False
-    return True
+def _get_word_down(letters_grid, h, w, height, width):
+    word = ''
+    for i in range(h, height):
+        word += letters_grid[i][w]
+    return word
 
 
-def _check_word_right_down(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a + i][b + i]:
-                return False
-    except:
-        return False
-    return True
+def _get_word_right_down(letters_grid, h, w, height, width):
+    word = ''
+    for i, j in zip(range(h, height), range(w, width)):
+        word += letters_grid[i][j]
+    return word
 
 
-def _check_word_right_up(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a - i][b + i] or a - i < 0:
-                return False
-    except:
-        return False
-    return True
+def _get_word_right_up(letters_grid, h, w, height, width):
+    word = ''
+    for i, j in zip(range(h, -1, -1), range(w, width)):
+        word += letters_grid[i][j]
+    return word
 
 
-def _check_word_left_down(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a + i][b - i] or b - i < 0:
-                return False
-    except:
-        return False
-    return True
+def _get_word_left_down(letters_grid, h, w, height, width):
+    word = ''
+    for i, j in zip(range(h, height), range(w, -1, -1)):
+        word += letters_grid[i][j]
+    return word
 
 
-def _check_word_left_up(word, letters_grid, a, b):
-    try:
-        for i in range(1, len(word)):
-            if word[i] != letters_grid[a - i][b - i] or a - i < 0 or b - i < 0:
-                return False
-    except:
-        return False
-    return True
+def _get_word_left_up(letters_grid, h, w, height, width):
+    word = ''
+    for i, j in zip(range(h, -1, -1), range(w, -1, -1)):
+        word += letters_grid[i][j]
+    return word
 
 
-all_direction_search = [
-    _check_word_right,
-    _check_word_left,
-    _check_word_up,
-    _check_word_down,
-    _check_word_right_down,
-    _check_word_right_up,
-    _check_word_left_down,
-    _check_word_left_up,
+all_direction_words = [
+    _get_word_right,
+    _get_word_left,
+    _get_word_up,
+    _get_word_down,
+    _get_word_right_down,
+    _get_word_right_up,
+    _get_word_left_down,
+    _get_word_left_up,
 ]
