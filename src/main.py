@@ -1,18 +1,29 @@
-import os
-import string
-import random
+import time
 from pprint import pprint
 
-
-def letters_grid_generator(chars=string.ascii_lowercase, size=15):
-    return [''.join(random.sample(chars, size)) for i in range(size - 1)]
-
+from src.all_direction_lib import all_direction_search
+from src.letters_grid import LettersGrid
+from src.words_list import WordsList
 
 if __name__ == '__main__':
-    BASE_DIR = os.path.dirname(__file__)
-    RESOURCES_DIR = os.path.join(BASE_DIR, '..', 'resources')
+    time_start = time.time()
+    words_dict = WordsList()
+    letters_grid = LettersGrid()
 
-    with open(os.path.join(RESOURCES_DIR, 'words.txt')) as words_file:
-        words = words_file.read().split('\n')
-    letters_grid = letters_grid_generator()
-    pprint(letters_grid)
+    result = []
+
+    for letter in words_dict.dictionary:
+        if letter in letters_grid.coordinates_map:
+            start_coordinates = letters_grid.coordinates_map[letter]
+            for start_coordinate in start_coordinates:
+                a, b = start_coordinate
+                for word in words_dict.dictionary[letter]:
+                    for func in all_direction_search:
+                        if func(word, letters_grid.grid, a, b):
+                            print(start_coordinate)
+                            print(word)
+                            result.append(word)
+
+    print(result)
+    pprint(letters_grid.grid)
+    print(time.time() - time_start)
