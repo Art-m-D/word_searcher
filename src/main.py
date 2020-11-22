@@ -18,11 +18,16 @@ if __name__ == '__main__':
             for start_coordinate in start_coordinates:
                 a, b = start_coordinate
                 for word in words_dict.dictionary[letter]:
+                    word_find = False
                     for func in all_direction_search:
                         if func(word, letters_grid.grid, a, b):
                             print(start_coordinate)
                             print(word)
                             result.append(word)
+                            word_find = True
+                            break
+                    if word_find:
+                        break
 
     print(result)
     pprint(letters_grid.grid)
