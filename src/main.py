@@ -17,7 +17,7 @@ def valid_words_search(height=15, width=15, words_file=None, predefined_grid=Non
         predefined_grid (list[str]): used if already have predefined WordSearch board
 
     Returns:
-        word_search_board(list[str]): WordSearch board
+        word_search_board(set[str]): WordSearch board
         result_word_list(list[str]): List of all valid words
     """
     words_dict = WordsList(words_file)
