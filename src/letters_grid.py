@@ -1,6 +1,7 @@
 import string
 from collections import defaultdict
 import random
+from typing import List
 
 
 class LettersGrid:
@@ -19,7 +20,7 @@ class LettersGrid:
          group
     """
 
-    def __init__(self, height: int, width: int, predefined_grid: list[str] = None):
+    def __init__(self, height: int, width: int, predefined_grid: List[str] = None):
 
         self.grid = []
         self.coordinates_map = defaultdict(list)

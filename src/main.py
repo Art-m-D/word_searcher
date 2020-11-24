@@ -1,13 +1,14 @@
 import argparse
 from pprint import pprint
+from typing import List, Tuple
 
 from all_direction_lib import all_direction_words
 from letters_grid import LettersGrid
 from words_list import WordsList
 
 
-def valid_words_search(height: int = 15, width: int = 15, words_file: str = None, predefined_grid: list[str] = None) -> \
-        tuple[list, set]:
+def valid_words_search(height: int = 15, width: int = 15, words_file: str = None, predefined_grid: List[str] = None) -> \
+        Tuple[list, set]:
     """
     implement main search logic
 

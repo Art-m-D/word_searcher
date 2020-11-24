@@ -24,17 +24,17 @@ LETTERS_GRID = ['mrvwsuraoyjxzfs',
                   'w': 5,
                   'strings_list': ['wguuwjxexk', 'wxpyzd', 'wtuetu', 'wfrdwbrbpe', 'wjgppfjvly', 'wchwxj', 'weduty',
                                    "wwgekm"]
-                  }, id='5x5'),
+                  }, id='5:5'),
     pytest.param({'h': 8,
                   'w': 3,
                   'strings_list': ['pbdfcpxmcdhv', 'puki', 'pdkpsggkw', 'pakqjlr', 'pkbwirp', 'psfgghzax', 'prea',
                                    "pmgd"]
-                  }, id='5x5'),
+                  }, id='8:3'),
     pytest.param({'h': 0,
                   'w': 0,
                   'strings_list': ['mrvwsuraoyjxzfs', 'm', 'm', 'mhhwsdhbiyyazwz', 'mkegwwjgppfjvly', 'm', 'm',
                                    "m"]
-                  }, id='5x5'),
+                  }, id='0:0'),
 ])
 def test_all_direction_lib(coordinates):
     for i in range(8):
