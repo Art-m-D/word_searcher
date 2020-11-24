@@ -4,7 +4,7 @@ direction, and a tuple for iterate through all of the directions
 """
 
 
-def _get_word_right(letters_grid, h, w, height, width):
+def _get_word_right(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the right direction
 
@@ -21,7 +21,7 @@ def _get_word_right(letters_grid, h, w, height, width):
     return ''.join([letters_grid[h][i] for i in range(w, width)])
 
 
-def _get_word_left(letters_grid, h, w, height, width):
+def _get_word_left(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the left direction
 
@@ -38,7 +38,7 @@ def _get_word_left(letters_grid, h, w, height, width):
     return ''.join([letters_grid[h][i] for i in range(w, -1, -1)])
 
 
-def _get_word_up(letters_grid, h, w, height, width):
+def _get_word_up(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the up direction
 
@@ -55,7 +55,7 @@ def _get_word_up(letters_grid, h, w, height, width):
     return ''.join([letters_grid[i][w] for i in range(h, -1, -1)])
 
 
-def _get_word_down(letters_grid, h, w, height, width):
+def _get_word_down(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the down direction
 
@@ -75,7 +75,7 @@ def _get_word_down(letters_grid, h, w, height, width):
     return ''.join([letters_grid[i][w] for i in range(h, height)])
 
 
-def _get_word_right_down(letters_grid, h, w, height, width):
+def _get_word_right_down(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the right-down diagonal direction
 
@@ -92,7 +92,7 @@ def _get_word_right_down(letters_grid, h, w, height, width):
     return ''.join([letters_grid[i][j] for i, j in zip(range(h, height), range(w, width))])
 
 
-def _get_word_right_up(letters_grid, h, w, height, width):
+def _get_word_right_up(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the right-up diagonal direction
 
@@ -109,7 +109,7 @@ def _get_word_right_up(letters_grid, h, w, height, width):
     return ''.join([letters_grid[i][j] for i, j in zip(range(h, -1, -1), range(w, width))])
 
 
-def _get_word_left_down(letters_grid, h, w, height, width):
+def _get_word_left_down(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the left-down diagonal direction
 
@@ -126,7 +126,7 @@ def _get_word_left_down(letters_grid, h, w, height, width):
     return ''.join([letters_grid[i][j] for i, j in zip(range(h, height), range(w, -1, -1))])
 
 
-def _get_word_left_up(letters_grid, h, w, height, width):
+def _get_word_left_up(letters_grid: list[str], h: int, w: int, height: int, width: int) -> str:
     """
     returns constructed string from coordinates (h,w) to the left-up diagonal direction
 

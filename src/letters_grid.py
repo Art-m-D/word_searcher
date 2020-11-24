@@ -19,7 +19,7 @@ class LettersGrid:
          group
     """
 
-    def __init__(self, height, width, predefined_grid=None):
+    def __init__(self, height: int, width: int, predefined_grid: list[str] = None):
 
         self.grid = []
         self.coordinates_map = defaultdict(list)

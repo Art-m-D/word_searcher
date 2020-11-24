@@ -6,7 +6,8 @@ from letters_grid import LettersGrid
 from words_list import WordsList
 
 
-def valid_words_search(height=15, width=15, words_file=None, predefined_grid=None):
+def valid_words_search(height: int = 15, width: int = 15, words_file: str = None, predefined_grid: list[str] = None) -> \
+        tuple[list, set]:
     """
     implement main search logic
 

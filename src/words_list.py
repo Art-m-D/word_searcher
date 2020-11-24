@@ -14,7 +14,7 @@ class WordsList:
         dictionary (dict[str, list])): This is where we store grouped file dictionary
     """
 
-    def __init__(self, path_to_words_file=None):
+    def __init__(self, path_to_words_file: str = None):
         self.dictionary = defaultdict(list)
         if path_to_words_file is None:
             resources_dir = os.path.join(os.path.dirname(__file__), '..', 'resources')
