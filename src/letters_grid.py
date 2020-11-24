@@ -9,23 +9,24 @@ class LettersGrid:
      letters
 
     Args:
-        height(int): height of the WordSearch board
-        width(int): width of the WordSearch board
+        height (int): height of the WordSearch board
+        width (int): width of the WordSearch board
+        predefined_grid (list[str]): used if already have predefined WordSearch board
 
     Attributes:
         grid (list[str]): WordSearch board
-        coordinates_map(dict[str, list[tuple]]): dictionary of coordinates, grouped by letters for matching with words
+        coordinates_map (dict[str, list[tuple]]): dictionary of coordinates, grouped by letters for matching with words
          group
     """
 
-    def __init__(self, height, width):
+    def __init__(self, height, width, predefined_grid=None):
 
         self.grid = []
         self.coordinates_map = defaultdict(list)
         for i in range(height):
             new_string = ''
             for j in range(width):
-                new_letter = random.choice(string.ascii_lowercase)
+                new_letter = random.choice(string.ascii_lowercase) if predefined_grid is None else predefined_grid[i][j]
                 new_string += new_letter
                 self.coordinates_map[new_letter].append((i, j))
             self.grid.append(new_string)
