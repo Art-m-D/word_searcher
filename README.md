@@ -34,3 +34,10 @@ The program takes the height and width of the WordSearch board and a vocabulary 
       --width WIDTH         width of the WordSearch board
       --words_file WORDS_FILE
                             file with words collection for WordSearch game
+
+## Tests running
+
+In case you need to run this project tests, make sure you have installed pytest and added path to "src" folder to PYTHONPATH environment variable
+
+
+        python -m pytest .

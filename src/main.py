@@ -1,7 +1,7 @@
 import argparse
-from pprint import pprint
-from typing import List, Tuple
 
+from typing import List, Tuple
+from texttable import Texttable
 from all_direction_lib import all_direction_words
 from letters_grid import LettersGrid
 from words_list import WordsList
@@ -67,5 +67,11 @@ if __name__ == '__main__':
         exit(0)
 
     word_search_board, result_word_list = valid_words_search(args.height, args.width, args.words_file)
-    pprint(result_word_list)
-    pprint(word_search_board)
+
+    # used Texttable for board pretty output
+    table = Texttable()
+    table.set_chars([' ', ' ', ' ', ' '])
+    [table.add_row(i.upper()) for i in word_search_board]
+
+    print(table.draw())
+    print('List of all founded words: '+', '.join(result_word_list))
